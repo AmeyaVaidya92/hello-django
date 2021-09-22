@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% block title %}This is my Title{% endblock title %}
+{% block body %}
+<div class="container px-0">
+  <h1 class="text-center my-4">Contact Us For Query and Follow Our Page</h1>
+  <img
+    src="https://source.unsplash.com/1200x400/?phone,email"
+    class="d-block w-100"
+    alt="..."
+  />
+</div>
+<div class="container">
+  <form method="post" action="/contact/">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="name" class="form-label">NAME:-</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        placeholder="name"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address:-</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="name@example.com"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">PHONE :-</label>
+      <input
+        type="phone"
+        class="form-control"
+        id="phone"
+        name="phone"
+        placeholder="243647473537"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="desc" class="form-label">DESC:-</label>
+      <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+    </div>
+    <button class="btn btn-dark" type="submit">SUBMIT</button>
+  </form>
+</div>
+{% endblock body %}
